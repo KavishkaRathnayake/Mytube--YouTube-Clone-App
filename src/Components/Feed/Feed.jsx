@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom'
 import { API_KEY } from '../../data'
 
 
+
 const Feed = ({category}) => {
 
     const [data, setData] = useState([]);
@@ -36,9 +37,9 @@ const Feed = ({category}) => {
             return(
                 <Link to={`video/${item.snippet.categoryID}/${item.id}`} className='card'>
                 <img src={item.snippet.thumbnails.medium.url} alt=""/>
-                <h2>{item.snippet.tittle}</h2>
-                <h3>chanux bro</h3>
-                <p>15k views &bull; 2 days ago</p>
+                <h2>{item.snippet.title}</h2>
+                <h3>{item.snippet.channelTitle}</h3>
+                <p>{item.statistics.viewCount}views &bull; 2 days ago</p>
             </Link>
 
             )
