@@ -7,17 +7,17 @@ import share from '../../assets/share.png';
 import save from '../../assets/save.png';
 import jack from '../../assets/jack.png';
 import user_profile from '../../assets/user_profile.jpg';
-import { API_KEY } from '../../data';
+import { API_KEY, value_converter } from '../../data';
 
 
 
-const PlayVideo = ({videoId}) => {
+const PlayVideo = ({VideoId}) => {
 
 const [apiData,setApiData] = useState(null);
 
 const fetchVideoData = async () =>{
     //fetching Videos Data
-    const videoDetails_url = `https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${API_KEY} `;
+    const videoDetails_url = `https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${VideoId}&key=${API_KEY}`;
     await fetch(videoDetails_url).then(res=>res.json()).then(data => setApiData(data.items[0]) )
 }
 useEffect(()=>{
@@ -27,10 +27,10 @@ useEffect(()=>{
   return (
     <div className='play-video'>
         {/*<video src={video1} controls autoPlay muted></video>*/}
-        <iframe  src={ `https://www.youtube.com/embed/${videoId}?autoplay=1`} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe  src={`https://www.youtube.com/embed/${VideoId}?autoplay=1`} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <h3>{apiData?apiData.snippet.title:"Title Here"}</h3>
         <div className='play-video-info'>
-            <p>1525 views &bull; 2 days ago</p>
+            <p>{apiData?value_converter(apiData.statistics.viewCount):"16k"} &bull; 2 days ago</p>
             <div>
                 <span><img src={like} alt=""/>125</span>
                 <span><img src={dislike} alt=""/>2</span>
