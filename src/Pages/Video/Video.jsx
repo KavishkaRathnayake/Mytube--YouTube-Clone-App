@@ -11,7 +11,7 @@ const Video = () => {
   return (
     <div className='play-container'>
           <PlayVideo VideoId={VideoId}/>
-          <Recommended/>
+          <Recommended categoryId={categoryId}/>
          
 
     </div>
