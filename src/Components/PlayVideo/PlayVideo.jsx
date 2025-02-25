@@ -14,16 +14,36 @@ import moment from 'moment';
 
 const PlayVideo = ({VideoId}) => {
 
+
 const [apiData,setApiData] = useState(null);
+const [channelData,setChannelData] = useState(null);
+const [commentData,setCommentData] = useState([]);
 
 const fetchVideoData = async () =>{
     //fetching Videos Data
     const videoDetails_url = `https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${VideoId}&key=${API_KEY}`;
     await fetch(videoDetails_url).then(res=>res.json()).then(data => setApiData(data.items[0]) )
 }
+
+    const fetchotherData = async () =>{
+        //fetching Channel Data
+        const channelData_url = `https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${apiData.snippet.channelId}&key=${API_KEY}`;
+        await fetch(channelData_url).then(res=>res.json()).then(data => setChannelData(data.items[0]) )
+
+         //fetching Comment Data
+         const comment_url = `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=${VideoId}&key=${API_KEY}`;
+        await fetch(comment_url).then(res=>res.json()).then(data => setCommentData(data.items[0]) )
+    }
+
+
 useEffect(()=>{
     fetchVideoData();
 },[])
+
+useEffect(()=>{
+    fetchotherData();
+},[apiData])
+
 
   return (
     <div className='play-video'>
@@ -31,7 +51,7 @@ useEffect(()=>{
         <iframe  src={`https://www.youtube.com/embed/${VideoId}?autoplay=1`} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <h3>{apiData?apiData.snippet.title:"Title Here"}</h3>
         <div className='play-video-info'>
-            <p>{apiData?value_converter(apiData.statistics.viewCount):"16k"} &bull; {apiData?moment(apiData.snippet.publishedAt).fromNow():""} </p>
+            <p>{apiData?value_converter(apiData.statistics.viewCount):"16k"} Views &bull; {apiData?moment(apiData.snippet.publishedAt).fromNow():""} </p>
             <div>
                 <span><img src={like} alt=""/>{apiData?value_converter(apiData.statistics.likeCount):155}</span>
                 <span><img src={dislike} alt=""/></span>
@@ -42,10 +62,10 @@ useEffect(()=>{
         </div>  
         <hr />
         <div className='publisher'>
-            <img src={jack} alt=""></img>
+            <img src={channelData?channelData.snippet.thumbnails.default.url:""} alt=""></img>
             <div>
-                <p>Chanux Bro</p>
-                <span>1M Subscribers</span>
+                <p>{apiData?apiData.snippet.channelTitle:""}</p>
+                <span>{channelData?value_converter(channelData.statistics.subscriberCount):"1M"} Subscribers</span>
             </div>
             <button>Subscribe</button>
         </div>
@@ -53,45 +73,7 @@ useEffect(()=>{
             <p>{apiData?apiData.snippet.description.slice(0,250):"Description Here"}</p>
             <hr />
             <h4>{apiData?value_converter(apiData.statistics.commentCount):102} Comments</h4>
-            <div className='comment'>
-                <img src={user_profile} alt=""/>
-                <div>
-                    <h3>Kavishka Rathnayaka <span>1 day ago</span></h3>
-                    <p>a global computer network proviing a variety of information & technology </p>
-                    <div className='comment-action'>
-                    <img src={like} alt=""/>
-                    <span>244</span>
-                    <img src={dislike} alt=""/>
-                    </div>
-                </div>
-            </div>
-
-            <div className='comment'>
-                <img src={user_profile} alt=""/>
-                <div>
-                    <h3>Kavishka Rathnayaka <span>1 day ago</span></h3>
-                    <p>a global computer network proviing a variety of information & technology </p>
-                    <div className='comment-action'>
-                    <img src={like} alt=""/>
-                    <span>244</span>
-                    <img src={dislike} alt=""/>
-                    </div>
-                </div>
-            </div>
-
-            <div className='comment'>
-                <img src={user_profile} alt=""/>
-                <div>
-                    <h3>Kavishka Rathnayaka <span>1 day ago</span></h3>
-                    <p>a global computer network proviing a variety of information & technology </p>
-                    <div className='comment-action'>
-                    <img src={like} alt=""/>
-                    <span>244</span>
-                    <img src={dislike} alt=""/>
-                    </div>
-                </div>
-            </div>
-
+          
             <div className='comment'>
                 <img src={user_profile} alt=""/>
                 <div>
