@@ -8,6 +8,7 @@ import save from '../../assets/save.png';
 import jack from '../../assets/jack.png';
 import user_profile from '../../assets/user_profile.jpg';
 import { API_KEY, value_converter } from '../../data';
+import moment from 'moment';
 
 
 
@@ -30,10 +31,10 @@ useEffect(()=>{
         <iframe  src={`https://www.youtube.com/embed/${VideoId}?autoplay=1`} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <h3>{apiData?apiData.snippet.title:"Title Here"}</h3>
         <div className='play-video-info'>
-            <p>{apiData?value_converter(apiData.statistics.viewCount):"16k"} &bull; 2 days ago</p>
+            <p>{apiData?value_converter(apiData.statistics.viewCount):"16k"} &bull; {apiData?moment(apiData.snippet.publishedAt).fromNow():""} </p>
             <div>
-                <span><img src={like} alt=""/>125</span>
-                <span><img src={dislike} alt=""/>2</span>
+                <span><img src={like} alt=""/>{apiData?value_converter(apiData.statistics.likeCount):155}</span>
+                <span><img src={dislike} alt=""/></span>
                 <span><img src={share} alt=""/>Share</span>
                 <span><img src={save} alt=""/>Save</span>    
             </div>
@@ -49,10 +50,9 @@ useEffect(()=>{
             <button>Subscribe</button>
         </div>
         <div className='vid-description'>
-            <p>Channel that meake learning easy</p>
-            <p>Subscribe chanux bro to watch more turorials</p>
+            <p>{apiData?apiData.snippet.description.slice(0,250):"Description Here"}</p>
             <hr />
-            <h4>130 Comments</h4>
+            <h4>{apiData?value_converter(apiData.statistics.commentCount):102} Comments</h4>
             <div className='comment'>
                 <img src={user_profile} alt=""/>
                 <div>
