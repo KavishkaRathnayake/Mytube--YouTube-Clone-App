@@ -24,9 +24,8 @@ const Recommended = ({categoryId}) => {
 
   return (
     <div className='recommended'>
-        {apiData.map((item,index)=>{
-            return(
-            <div key={index} className='side-video-list'>
+        
+        <div className='side-video-list'>
             <img src={thumbnail1} alt=""/>
             <div className='vid-info'>
                 <h4>Best channel help you to be a millioner</h4>
@@ -34,9 +33,286 @@ const Recommended = ({categoryId}) => {
                 <p>88k Views</p>
             </div>
             </div>
-            )
-        })}
-       
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
+
+            <div className='side-video-list'>
+            <img src={thumbnail1} alt=""/>
+            <div className='vid-info'>
+                <h4>Best channel help you to be a millioner</h4>
+                <p>Ape Amma</p>
+                <p>88k Views</p>
+            </div>
+            </div>
  
 
     </div>

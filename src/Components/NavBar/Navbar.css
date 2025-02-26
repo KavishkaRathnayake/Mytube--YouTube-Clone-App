@@ -9,12 +9,13 @@ nav{
 }
 
 .nav-left .menu icon{
-    width: 22px;
+    width: 1%;
     margin-right: 25px;
 }
 
 .nav-left .logo{
-    width: 130px;
+    width: 180px;
+   
 } 
 
 .nav-middle .search-box{
